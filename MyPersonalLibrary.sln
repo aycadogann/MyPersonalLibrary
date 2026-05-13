@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPersonalLib.UI", "MyPerso
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPersonalLib.Entities", "MyPersonalLib.Entities\MyPersonalLib.Entities.csproj", "{F2FD7787-7C85-4E31-8969-CB4A501D2CCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPersonalLib.DataAccess", "MyPersonalLib.DataAccess\MyPersonalLib.DataAccess.csproj", "{8A00F2EE-0E96-4484-B66E-5939D99031E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{F2FD7787-7C85-4E31-8969-CB4A501D2CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2FD7787-7C85-4E31-8969-CB4A501D2CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2FD7787-7C85-4E31-8969-CB4A501D2CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A00F2EE-0E96-4484-B66E-5939D99031E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A00F2EE-0E96-4484-B66E-5939D99031E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A00F2EE-0E96-4484-B66E-5939D99031E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A00F2EE-0E96-4484-B66E-5939D99031E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
