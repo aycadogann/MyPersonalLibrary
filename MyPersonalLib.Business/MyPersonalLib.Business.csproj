@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8A00F2EE-0E96-4484-B66E-5939D99031E1}</ProjectGuid>
+    <ProjectGuid>{04F07C20-0D54-4F36-9DB3-098451AB1D2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyPersonalLib.DataAccess</RootNamespace>
-    <AssemblyName>MyPersonalLib.DataAccess</AssemblyName>
+    <RootNamespace>MyPersonalLib.Business</RootNamespace>
+    <AssemblyName>MyPersonalLib.Business</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\AdoNet\AdoNetBookDal.cs" />
-    <Compile Include="Concrete\AdoNet\DbConnection.cs" />
-    <Compile Include="Abstract\IBookDal.cs" />
+    <Compile Include="Abstract\IBookService.cs" />
+    <Compile Include="Concrete\BookManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyPersonalLib.DataAccess\MyPersonalLib.DataAccess.csproj">
+      <Project>{8A00F2EE-0E96-4484-B66E-5939D99031E1}</Project>
+      <Name>MyPersonalLib.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyPersonalLib.Entities\MyPersonalLib.Entities.csproj">
       <Project>{F2FD7787-7C85-4E31-8969-CB4A501D2CCB}</Project>
       <Name>MyPersonalLib.Entities</Name>

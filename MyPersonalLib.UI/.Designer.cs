@@ -203,6 +203,7 @@ namespace MyPersonalLib.UI
             // 
             // dgw_BookList
             // 
+            this.dgw_BookList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgw_BookList.BackgroundColor = System.Drawing.Color.White;
             this.dgw_BookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgw_BookList.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -311,6 +312,7 @@ namespace MyPersonalLib.UI
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Personal Library";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgw_BookList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Rate)).EndInit();
             this.groupBox1.ResumeLayout(false);

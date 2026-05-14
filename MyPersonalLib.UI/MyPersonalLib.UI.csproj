@@ -90,5 +90,19 @@
   <ItemGroup>
     <None Include="Resources\delete.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyPersonalLib.Business\MyPersonalLib.Business.csproj">
+      <Project>{04F07C20-0D54-4F36-9DB3-098451AB1D2E}</Project>
+      <Name>MyPersonalLib.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyPersonalLib.DataAccess\MyPersonalLib.DataAccess.csproj">
+      <Project>{8a00f2ee-0e96-4484-b66e-5939d99031e1}</Project>
+      <Name>MyPersonalLib.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyPersonalLib.Entities\MyPersonalLib.Entities.csproj">
+      <Project>{f2fd7787-7c85-4e31-8969-cb4a501d2ccb}</Project>
+      <Name>MyPersonalLib.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
