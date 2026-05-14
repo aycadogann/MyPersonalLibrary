@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyPersonalLib.Business.Abstract
+namespace MyPersonalLib.DataAccess.Abstract
 {
-    public interface IBookService
+    public interface IGenreDal
     {
-        List<Book> GetAll();
-        void Add(Book book);
-
+        List<Genre> GetAll();
     }
 }

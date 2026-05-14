@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace MyPersonalLib.Business.Abstract
 {
-    public interface IBookService
+    public interface IGenreService
     {
-        List<Book> GetAll();
-        void Add(Book book);
-
+        List<Genre> GetAll();
     }
 }

@@ -247,6 +247,7 @@ namespace MyPersonalLib.UI
             this.btn_Add.Size = new System.Drawing.Size(50, 50);
             this.btn_Add.TabIndex = 20;
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // num_Rate
             // 

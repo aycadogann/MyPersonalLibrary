@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBookService.cs" />
+    <Compile Include="Abstract\IGenreService.cs" />
     <Compile Include="Concrete\BookManager.cs" />
+    <Compile Include="Concrete\GenreManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

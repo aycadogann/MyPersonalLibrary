@@ -9,22 +9,16 @@ using System.Threading.Tasks;
 
 namespace MyPersonalLib.Business.Concrete
 {
-    public class BookManager : IBookService
+    public class GenreManager : IGenreService
     {
-        IBookDal _bookDal;
-        public BookManager(IBookDal bookDal)
+        IGenreDal _genreDal;
+        public GenreManager(IGenreDal genreDal)
         {
-            _bookDal = bookDal;
+            _genreDal = genreDal;
         }
-
-        public void Add(Book book)
+        public List<Genre> GetAll()
         {
-            _bookDal.Add(book);
-        }
-
-        public List<Book> GetAll()
-        {
-           return _bookDal.GetAll();
+            return _genreDal.GetAll();
         }
     }
 }

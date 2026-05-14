@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IGenreDal.cs" />
     <Compile Include="Concrete\AdoNet\AdoNetBookDal.cs" />
+    <Compile Include="Concrete\AdoNet\AdoNetGenreDal.cs" />
     <Compile Include="Concrete\AdoNet\DbConnection.cs" />
     <Compile Include="Abstract\IBookDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

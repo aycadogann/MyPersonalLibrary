@@ -14,7 +14,19 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
     {
         public void Add(Book book)
         {
-            throw new NotImplementedException();
+            if (DbConnection.Connection.State == ConnectionState.Closed)
+                DbConnection.Connection.Open();
+
+            SqlCommand cmd = new SqlCommand("insert into Books (BookName, Author, GenreID, StartDate, FinishDate, ReadingStatus, Rating) values (@p1, @p2,@p3,@p4,@p5,@p6,@p7)", DbConnection.Connection);
+            cmd.Parameters.AddWithValue("@p1", book.BookName);
+            cmd.Parameters.AddWithValue("@p2", book.Author);
+            cmd.Parameters.AddWithValue("@p3", book.GenreID);
+            cmd.Parameters.AddWithValue("@p4", book.StartDate);
+            cmd.Parameters.AddWithValue("@p5", book.FinishDate);
+            cmd.Parameters.AddWithValue("@p6", book.Status);
+            cmd.Parameters.AddWithValue("@p7", book.Rate);
+            cmd.ExecuteNonQuery();
+            DbConnection.Connection.Close();
         }
 
         public void Delete(int id)
@@ -34,9 +46,9 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
             {
                 Book book = new Book();
                 book.ID = Convert.ToInt32(dr["ID"]);
-                book.BookName = dr["BookName"].ToString();
+                book.BookName = dr["BookName"].ToString();               
                 book.Author = dr["Author"].ToString();
-                book.Genre = dr["Genre"].ToString();
+                book.GenreID = Convert.ToInt32(dr["GenreID"]);
                 book.StartDate = dr["StartDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["StartDate"]);
                 book.FinishDate = dr["FinishDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["FinishDate"]);
                 book.Status = dr["ReadingStatus"] == DBNull.Value ? (bool?)null : Convert.ToBoolean(dr["ReadingStatus"]);
