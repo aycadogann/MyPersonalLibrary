@@ -61,7 +61,7 @@ namespace MyPersonalLib.UI
             // txt_ID
             // 
             this.txt_ID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_ID.Location = new System.Drawing.Point(168, 39);
+            this.txt_ID.Location = new System.Drawing.Point(175, 39);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.ReadOnly = true;
             this.txt_ID.Size = new System.Drawing.Size(253, 34);
@@ -90,7 +90,7 @@ namespace MyPersonalLib.UI
             // txt_BookName
             // 
             this.txt_BookName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_BookName.Location = new System.Drawing.Point(168, 79);
+            this.txt_BookName.Location = new System.Drawing.Point(175, 79);
             this.txt_BookName.Name = "txt_BookName";
             this.txt_BookName.Size = new System.Drawing.Size(253, 34);
             this.txt_BookName.TabIndex = 2;
@@ -108,7 +108,7 @@ namespace MyPersonalLib.UI
             // txt_Author
             // 
             this.txt_Author.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txt_Author.Location = new System.Drawing.Point(168, 119);
+            this.txt_Author.Location = new System.Drawing.Point(175, 119);
             this.txt_Author.Name = "txt_Author";
             this.txt_Author.Size = new System.Drawing.Size(253, 34);
             this.txt_Author.TabIndex = 4;
@@ -127,7 +127,7 @@ namespace MyPersonalLib.UI
             // 
             this.cmb_Genre.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmb_Genre.FormattingEnabled = true;
-            this.cmb_Genre.Location = new System.Drawing.Point(168, 159);
+            this.cmb_Genre.Location = new System.Drawing.Point(175, 159);
             this.cmb_Genre.Name = "cmb_Genre";
             this.cmb_Genre.Size = new System.Drawing.Size(253, 36);
             this.cmb_Genre.TabIndex = 8;
@@ -136,7 +136,7 @@ namespace MyPersonalLib.UI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(503, 45);
+            this.label5.Location = new System.Drawing.Point(507, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 28);
             this.label5.TabIndex = 10;
@@ -146,7 +146,7 @@ namespace MyPersonalLib.UI
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(641, 45);
+            this.dateTimePicker1.Location = new System.Drawing.Point(655, 45);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(253, 34);
             this.dateTimePicker1.TabIndex = 11;
@@ -155,7 +155,7 @@ namespace MyPersonalLib.UI
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Segoe Fluent Icons", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(641, 85);
+            this.dateTimePicker2.Location = new System.Drawing.Point(655, 85);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(253, 34);
             this.dateTimePicker2.TabIndex = 13;
@@ -164,7 +164,7 @@ namespace MyPersonalLib.UI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.Location = new System.Drawing.Point(503, 85);
+            this.label6.Location = new System.Drawing.Point(507, 85);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 28);
             this.label6.TabIndex = 12;
@@ -174,7 +174,7 @@ namespace MyPersonalLib.UI
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(503, 125);
+            this.label7.Location = new System.Drawing.Point(507, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 28);
             this.label7.TabIndex = 14;
@@ -184,7 +184,7 @@ namespace MyPersonalLib.UI
             // 
             this.chk_IsRead.AutoSize = true;
             this.chk_IsRead.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.chk_IsRead.Location = new System.Drawing.Point(641, 125);
+            this.chk_IsRead.Location = new System.Drawing.Point(655, 125);
             this.chk_IsRead.Name = "chk_IsRead";
             this.chk_IsRead.Size = new System.Drawing.Size(104, 32);
             this.chk_IsRead.TabIndex = 16;
@@ -195,7 +195,7 @@ namespace MyPersonalLib.UI
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(503, 163);
+            this.label8.Location = new System.Drawing.Point(507, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 28);
             this.label8.TabIndex = 17;
@@ -212,7 +212,7 @@ namespace MyPersonalLib.UI
             this.dgw_BookList.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgw_BookList.RowHeadersWidth = 51;
             this.dgw_BookList.RowTemplate.Height = 24;
-            this.dgw_BookList.Size = new System.Drawing.Size(952, 234);
+            this.dgw_BookList.Size = new System.Drawing.Size(972, 234);
             this.dgw_BookList.TabIndex = 19;
             // 
             // btn_Delete
@@ -220,7 +220,7 @@ namespace MyPersonalLib.UI
             this.btn_Delete.BackgroundImage = global::MyPersonalLib.UI.Properties.Resources.delete;
             this.btn_Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(529, 215);
+            this.btn_Delete.Location = new System.Drawing.Point(556, 216);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(50, 50);
             this.btn_Delete.TabIndex = 22;
@@ -231,7 +231,7 @@ namespace MyPersonalLib.UI
             this.btn_Update.BackgroundImage = global::MyPersonalLib.UI.Properties.Resources.update;
             this.btn_Update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Update.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_Update.Location = new System.Drawing.Point(419, 215);
+            this.btn_Update.Location = new System.Drawing.Point(446, 216);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(50, 50);
             this.btn_Update.TabIndex = 21;
@@ -242,7 +242,7 @@ namespace MyPersonalLib.UI
             this.btn_Add.BackgroundImage = global::MyPersonalLib.UI.Properties.Resources.save;
             this.btn_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(309, 215);
+            this.btn_Add.Location = new System.Drawing.Point(336, 216);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(50, 50);
             this.btn_Add.TabIndex = 20;
@@ -251,7 +251,7 @@ namespace MyPersonalLib.UI
             // num_Rate
             // 
             this.num_Rate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.num_Rate.Location = new System.Drawing.Point(641, 163);
+            this.num_Rate.Location = new System.Drawing.Point(655, 163);
             this.num_Rate.Name = "num_Rate";
             this.num_Rate.Size = new System.Drawing.Size(48, 34);
             this.num_Rate.TabIndex = 23;
@@ -264,7 +264,7 @@ namespace MyPersonalLib.UI
             this.groupBox1.Controls.Add(this.dgw_BookList);
             this.groupBox1.Location = new System.Drawing.Point(3, 291);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(958, 255);
+            this.groupBox1.Size = new System.Drawing.Size(978, 255);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kitap Listesi";
@@ -294,7 +294,7 @@ namespace MyPersonalLib.UI
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(958, 283);
+            this.groupBox2.Size = new System.Drawing.Size(978, 283);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Kitap Bilgiler";
@@ -304,7 +304,7 @@ namespace MyPersonalLib.UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(963, 549);
+            this.ClientSize = new System.Drawing.Size(983, 549);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
