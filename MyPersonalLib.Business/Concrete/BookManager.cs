@@ -26,5 +26,10 @@ namespace MyPersonalLib.Business.Concrete
         {
            return _bookDal.GetAll();
         }
+
+        public void Update(Book book)
+        {
+            _bookDal.Update(book);
+        }
     }
 }

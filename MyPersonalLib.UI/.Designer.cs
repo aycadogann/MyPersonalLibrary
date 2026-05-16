@@ -214,6 +214,7 @@ namespace MyPersonalLib.UI
             this.dgw_BookList.RowTemplate.Height = 24;
             this.dgw_BookList.Size = new System.Drawing.Size(972, 234);
             this.dgw_BookList.TabIndex = 19;
+            this.dgw_BookList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgw_BookList_CellClick);
             // 
             // btn_Delete
             // 
@@ -236,6 +237,7 @@ namespace MyPersonalLib.UI
             this.btn_Update.Size = new System.Drawing.Size(50, 50);
             this.btn_Update.TabIndex = 21;
             this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 

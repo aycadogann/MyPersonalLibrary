@@ -62,7 +62,22 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
 
         public void Update(Book book)
         {
-            throw new NotImplementedException();
+            if (DbConnection.Connection.State == ConnectionState.Closed)
+                DbConnection.Connection.Open();
+
+            SqlCommand cmd = new SqlCommand("update Books set BookName=@p1 , GenreID=@p2, Author=@p3, StartDate=@p4, FinishDate=@p5, ReadingStatus=@p6, Rating=@p7 where ID=@id", 
+                DbConnection.Connection);
+            cmd.Parameters.AddWithValue("@id", book.ID);
+            cmd.Parameters.AddWithValue("@p1", book.BookName);
+            cmd.Parameters.AddWithValue("@p2", book.GenreID);
+            cmd.Parameters.AddWithValue("@p3", book.Author);
+            cmd.Parameters.AddWithValue("@p4", book.StartDate);
+            cmd.Parameters.AddWithValue("@p5", book.FinishDate);
+            cmd.Parameters.AddWithValue("@p6", book.Status);
+            cmd.Parameters.AddWithValue("@p7", book.Rate);
+            cmd.ExecuteNonQuery();
+            DbConnection.Connection.Close();
+
         }
 
     }

@@ -69,21 +69,23 @@ namespace MyPersonalLib.UI
             book.BookName = txt_BookName.Text;
             book.Author = txt_Author.Text;
 
-            if(cmb_Genre.SelectedValue!=null)
+            if (cmb_Genre.SelectedValue != null)
                 book.GenreID = Convert.ToInt32(cmb_Genre.SelectedValue);
 
             if (dateTimePicker1.Checked)
             {
                 book.StartDate = dateTimePicker1.Value;
-            }else
+            }
+            else
             {
                 book.FinishDate = (DateTime?)null; // Veritabanına boş gidecek
             }
 
             if (dateTimePicker2.Checked)
-            { 
+            {
                 book.FinishDate = dateTimePicker2.Value;
-            }else
+            }
+            else
             {
                 book.FinishDate = (DateTime?)null; // Veritabanına boş gidecek
             }
@@ -94,6 +96,46 @@ namespace MyPersonalLib.UI
             _bookService.Add(book);
 
             MessageBox.Show("Kitap başarıyla eklendi");
+            List();
+        }
+
+        private void dgw_BookList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txt_ID.Text = dgw_BookList.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txt_BookName.Text = dgw_BookList.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txt_Author.Text = dgw_BookList.Rows[e.RowIndex].Cells[2].Value.ToString();
+                cmb_Genre.SelectedIndex = cmb_Genre.FindStringExact(dgw_BookList.Rows[e.RowIndex].Cells[3].Value.ToString());
+                if (dgw_BookList.Rows[e.RowIndex].Cells[4].Value == DBNull.Value || dgw_BookList.Rows[e.RowIndex].Cells[4].Value == null)
+                    dateTimePicker1.Value=DateTime.Now;
+                else
+                    dateTimePicker1.Value = Convert.ToDateTime(dgw_BookList.Rows[e.RowIndex].Cells[4].Value);
+                if (dgw_BookList.Rows[e.RowIndex].Cells[5].Value == DBNull.Value || dgw_BookList.Rows[e.RowIndex].Cells[5].Value == null)
+                    dateTimePicker2.Value = DateTime.Now;
+                else
+                    dateTimePicker2.Value = Convert.ToDateTime(dgw_BookList.Rows[e.RowIndex].Cells[5].Value);
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            book.ID = Convert.ToInt32(txt_ID.Text);
+            book.BookName = txt_BookName.Text;
+            book.Author = txt_Author.Text;
+            book.GenreID = Convert.ToInt32(cmb_Genre.SelectedValue);
+            book.StartDate = dateTimePicker1.Value;
+            book.FinishDate = dateTimePicker2.Value;
+            book.Status = chk_IsRead.Checked;
+            book.Rate = Convert.ToByte(num_Rate.Value);
+
+            _bookService.Update(book);
+            MessageBox.Show("Güncelleme başarıyla tamamlandı");
             List();
         }
     }

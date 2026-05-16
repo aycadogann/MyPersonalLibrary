@@ -11,6 +11,7 @@ namespace MyPersonalLib.Business.Abstract
     {
         List<Book> GetAll();
         void Add(Book book);
+        void Update(Book book);
 
     }
 }
