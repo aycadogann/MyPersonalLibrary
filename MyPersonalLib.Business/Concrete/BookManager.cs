@@ -22,6 +22,11 @@ namespace MyPersonalLib.Business.Concrete
             _bookDal.Add(book);
         }
 
+        public void Delete(int id)
+        {
+            _bookDal.Delete(id);
+        }
+
         public List<Book> GetAll()
         {
            return _bookDal.GetAll();

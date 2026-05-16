@@ -55,14 +55,24 @@ namespace MyPersonalLib.UI
             dgw_BookList.Columns[6].HeaderText = "Durum";
             dgw_BookList.Columns[7].HeaderText = "Puan";
         }
-
         private void LoadCombobox()
         {
             cmb_Genre.DataSource = _genreService.GetAll();
             cmb_Genre.DisplayMember = "BookGenre";
             cmb_Genre.ValueMember = "ID";
         }
+        private void Clear()
+        {
+            txt_ID.Clear();
+            txt_BookName.Clear();
+            txt_Author.Clear();
+            cmb_Genre.SelectedIndex = 0;
+            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker2.Value = DateTime.Now;
+            chk_IsRead.Checked = false;
+            num_Rate.Value = 0;
 
+        }
         private void btn_Add_Click(object sender, EventArgs e)
         {
             Book book = new Book();
@@ -78,7 +88,7 @@ namespace MyPersonalLib.UI
             }
             else
             {
-                book.FinishDate = (DateTime?)null; // Veritabanına boş gidecek
+                book.FinishDate = (DateTime?)null;
             }
 
             if (dateTimePicker2.Checked)
@@ -87,7 +97,7 @@ namespace MyPersonalLib.UI
             }
             else
             {
-                book.FinishDate = (DateTime?)null; // Veritabanına boş gidecek
+                book.FinishDate = (DateTime?)null; 
             }
 
             book.Status = chk_IsRead.Checked;
@@ -98,7 +108,6 @@ namespace MyPersonalLib.UI
             MessageBox.Show("Kitap başarıyla eklendi");
             List();
         }
-
         private void dgw_BookList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -121,7 +130,6 @@ namespace MyPersonalLib.UI
                 return;
             }
         }
-
         private void btn_Update_Click(object sender, EventArgs e)
         {
             Book book = new Book();
@@ -137,6 +145,22 @@ namespace MyPersonalLib.UI
             _bookService.Update(book);
             MessageBox.Show("Güncelleme başarıyla tamamlandı");
             List();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            string text = txt_BookName.Text + " adlı kitabı silmek istediğinize emin misiniz?";
+            DialogResult dr = MessageBox.Show(text, "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr==DialogResult.OK)
+            {
+                _bookService.Delete(Convert.ToInt32(txt_ID.Text));
+            }
+            else
+            {
+                return;
+            }
+            List();
+            Clear();
         }
     }
 }

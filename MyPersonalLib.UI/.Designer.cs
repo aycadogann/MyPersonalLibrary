@@ -226,6 +226,7 @@ namespace MyPersonalLib.UI
             this.btn_Delete.Size = new System.Drawing.Size(50, 50);
             this.btn_Delete.TabIndex = 22;
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Update
             // 

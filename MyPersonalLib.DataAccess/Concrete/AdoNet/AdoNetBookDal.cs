@@ -31,7 +31,13 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DbConnection.Connection.State == ConnectionState.Closed)
+                DbConnection.Connection.Open();
+
+            SqlCommand cmd = new SqlCommand("delete from Books where ID=@p1", DbConnection.Connection);
+            cmd.Parameters.AddWithValue("@p1", id);
+            cmd.ExecuteNonQuery();
+            DbConnection.Connection.Close();
         }
 
         public List<Book> GetAll()
