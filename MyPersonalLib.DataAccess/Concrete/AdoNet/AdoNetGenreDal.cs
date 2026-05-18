@@ -24,7 +24,7 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
             {
                 Genre genre = new Genre() { 
                     ID=Convert.ToInt32(dr["ID"]),
-                    BookGenre = dr["Genre"].ToString() };
+                    BookGenre = dr["BookGenre"].ToString() };
                 genres.Add(genre);
             }
             dr.Close();

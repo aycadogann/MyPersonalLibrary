@@ -160,7 +160,7 @@ namespace MyPersonalLib.UI
         {
             string text = txt_BookName.Text + " adlı kitabı silmek istediğinize emin misiniz?";
             DialogResult dr = MessageBox.Show(text, "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr == DialogResult.OK)
+            if (dr == DialogResult.Yes)
             {
                 _bookService.Delete(Convert.ToInt32(txt_ID.Text));
             }

@@ -2,6 +2,7 @@
 using MyPersonalLib.Business.Concrete;
 using MyPersonalLib.DataAccess.Abstract;
 using MyPersonalLib.DataAccess.Concrete.AdoNet;
+using MyPersonalLib.DataAccess.Concrete.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,12 @@ namespace MyPersonalLib.UI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IBookService bookService = new BookManager(new AdoNetBookDal());
-            IGenreService genreService = new GenreManager(new AdoNetGenreDal());
+            IBookService bookService = new BookManager(new EfBookDal());
+            IGenreService genreService = new GenreManager(new EfGenreDal());
 
-            Application.Run(new Form1(bookService,genreService));
+            Application.Run(new Form1(bookService, genreService));
+
+
         }
 
 

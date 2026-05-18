@@ -17,7 +17,7 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
             if (DbConnection.Connection.State == ConnectionState.Closed)
                 DbConnection.Connection.Open();
 
-            SqlCommand cmd = new SqlCommand("insert into Books (BookName, Author, GenreID, StartDate, FinishDate, ReadingStatus, Rating) values (@p1, @p2,@p3,@p4,@p5,@p6,@p7)", DbConnection.Connection);
+            SqlCommand cmd = new SqlCommand("insert into Books (BookName, Author, GenreID, StartDate, FinishDate, Status, Rate) values (@p1, @p2,@p3,@p4,@p5,@p6,@p7)", DbConnection.Connection);
             cmd.Parameters.AddWithValue("@p1", book.BookName);
             cmd.Parameters.AddWithValue("@p2", book.Author);
             cmd.Parameters.AddWithValue("@p3", book.GenreID);
@@ -57,8 +57,8 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
                 book.GenreID = Convert.ToInt32(dr["GenreID"]);
                 book.StartDate = dr["StartDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["StartDate"]);
                 book.FinishDate = dr["FinishDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(dr["FinishDate"]);
-                book.Status = dr["ReadingStatus"] == DBNull.Value ? (bool?)null : Convert.ToBoolean(dr["ReadingStatus"]);
-                book.Rate = dr["Rating"] == DBNull.Value ? (byte?)null : Convert.ToByte(dr["Rating"]);
+                book.Status = dr["Status"] == DBNull.Value ? (bool?)null : Convert.ToBoolean(dr["Status"]);
+                book.Rate = dr["Rate"] == DBNull.Value ? (byte?)null : Convert.ToByte(dr["Rate"]);
                 books.Add(book);
             }
             dr.Close();
@@ -71,7 +71,7 @@ namespace MyPersonalLib.DataAccess.Concrete.AdoNet
             if (DbConnection.Connection.State == ConnectionState.Closed)
                 DbConnection.Connection.Open();
 
-            SqlCommand cmd = new SqlCommand("update Books set BookName=@p1 , GenreID=@p2, Author=@p3, StartDate=@p4, FinishDate=@p5, ReadingStatus=@p6, Rating=@p7 where ID=@id", 
+            SqlCommand cmd = new SqlCommand("update Books set BookName=@p1 , GenreID=@p2, Author=@p3, StartDate=@p4, FinishDate=@p5, Status=@p6, Rate=@p7 where ID=@id", 
                 DbConnection.Connection);
             cmd.Parameters.AddWithValue("@id", book.ID);
             cmd.Parameters.AddWithValue("@p1", book.BookName);
