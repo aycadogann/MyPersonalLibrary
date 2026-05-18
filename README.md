@@ -6,6 +6,8 @@ Bu proje, yazılım geliştirme prensiplerine (OOP, SOLID) ve temiz kod (Clean C
 
 ---
 
+
+
 ## 🏗️ Proje Mimarisi & Katmanlar
 
 Proje, bağımlılıkları en aza indirmek (Loose Coupling) amacıyla 4 ana katmandan oluşturulmuştur:
@@ -32,7 +34,7 @@ Proje, bağımlılıkları en aza indirmek (Loose Coupling) amacıyla 4 ana katm
 ## 🚀 Öne Çıkan Özellikler
 
 * **Esnek Tarih Yönetimi:** Yeni eklenen kitaplar "Henüz Başlanmadı" statüsünde eklenebilir.
-* **Güvenli Sorgular:** ADO.NET katmanında SQL Injection saldırılarını önlemek adına parametrik sorgular kullanılmıştır.
+* **Güvenli Sorgular:** ADO.NET katmanında parametrik sorgular kullanılmıştır.
 
 ---
 
