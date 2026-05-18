@@ -275,7 +275,6 @@ namespace MyPersonalLib.UI
             this.lbl_StartDate.Size = new System.Drawing.Size(122, 23);
             this.lbl_StartDate.TabIndex = 30;
             this.lbl_StartDate.Text = "Başlama Tarihi:";
-            this.lbl_StartDate.Visible = false;
             // 
             // dateTimePicker2
             // 
@@ -285,7 +284,6 @@ namespace MyPersonalLib.UI
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(253, 30);
             this.dateTimePicker2.TabIndex = 33;
-            this.dateTimePicker2.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -295,7 +293,6 @@ namespace MyPersonalLib.UI
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(253, 30);
             this.dateTimePicker1.TabIndex = 31;
-            this.dateTimePicker1.Visible = false;
             // 
             // lbl_FinishDate
             // 
@@ -306,7 +303,6 @@ namespace MyPersonalLib.UI
             this.lbl_FinishDate.Size = new System.Drawing.Size(113, 23);
             this.lbl_FinishDate.TabIndex = 32;
             this.lbl_FinishDate.Text = "Bitirme Tarihi:";
-            this.lbl_FinishDate.Visible = false;
             // 
             // Form1
             // 
