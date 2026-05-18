@@ -1,4 +1,8 @@
-﻿using System;
+﻿using MyPersonalLib.Business.Abstract;
+using MyPersonalLib.Business.Concrete;
+using MyPersonalLib.DataAccess.Abstract;
+using MyPersonalLib.DataAccess.Concrete.AdoNet;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +20,13 @@ namespace MyPersonalLib.UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            IBookService bookService = new BookManager(new AdoNetBookDal());
+            IGenreService genreService = new GenreManager(new AdoNetGenreDal());
+
+            Application.Run(new Form1(bookService,genreService));
         }
+
+
     }
 }

@@ -16,10 +16,13 @@ namespace MyPersonalLib.UI
 {
     public partial class Form1 : Form
     {
-        IBookService _bookService = new BookManager(new AdoNetBookDal());
-        IGenreService _genreService = new GenreManager(new AdoNetGenreDal());
-        public Form1()
+        private readonly IBookService _bookService;
+        private readonly IGenreService _genreService;
+       
+        public Form1(IBookService bookService, IGenreService genreService)
         {
+            _bookService = bookService;
+            _genreService = genreService;
             InitializeComponent();
         }
 
@@ -82,31 +85,36 @@ namespace MyPersonalLib.UI
             if (cmb_Genre.SelectedValue != null)
                 book.GenreID = Convert.ToInt32(cmb_Genre.SelectedValue);
 
-            if (dateTimePicker1.Checked)
-            {
-                book.StartDate = dateTimePicker1.Value;
-            }
-            else
-            {
-                book.FinishDate = (DateTime?)null;
-            }
-
-            if (dateTimePicker2.Checked)
-            {
-                book.FinishDate = dateTimePicker2.Value;
-            }
-            else
-            {
-                book.FinishDate = (DateTime?)null; 
-            }
-
             book.Status = chk_IsRead.Checked;
+
+            if (chk_IsRead.Checked == true)
+            {
+                if (dateTimePicker1.Checked)
+                {
+                    book.StartDate = dateTimePicker1.Value;
+                }
+                else
+                {
+                    book.StartDate = (DateTime?)null;
+                }
+
+                if (dateTimePicker2.Checked)
+                {
+                    book.FinishDate = dateTimePicker2.Value;
+                }
+                else
+                {
+                    book.FinishDate = (DateTime?)null;
+                }
+            }
+
             book.Rate = Convert.ToByte(num_Rate.Value);
 
             _bookService.Add(book);
 
             MessageBox.Show("Kitap başarıyla eklendi");
             List();
+            Clear();
         }
         private void dgw_BookList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -117,7 +125,7 @@ namespace MyPersonalLib.UI
                 txt_Author.Text = dgw_BookList.Rows[e.RowIndex].Cells[2].Value.ToString();
                 cmb_Genre.SelectedIndex = cmb_Genre.FindStringExact(dgw_BookList.Rows[e.RowIndex].Cells[3].Value.ToString());
                 if (dgw_BookList.Rows[e.RowIndex].Cells[4].Value == DBNull.Value || dgw_BookList.Rows[e.RowIndex].Cells[4].Value == null)
-                    dateTimePicker1.Value=DateTime.Now;
+                    dateTimePicker1.Value = DateTime.Now;
                 else
                     dateTimePicker1.Value = Convert.ToDateTime(dgw_BookList.Rows[e.RowIndex].Cells[4].Value);
                 if (dgw_BookList.Rows[e.RowIndex].Cells[5].Value == DBNull.Value || dgw_BookList.Rows[e.RowIndex].Cells[5].Value == null)
@@ -145,13 +153,14 @@ namespace MyPersonalLib.UI
             _bookService.Update(book);
             MessageBox.Show("Güncelleme başarıyla tamamlandı");
             List();
+            Clear();
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             string text = txt_BookName.Text + " adlı kitabı silmek istediğinize emin misiniz?";
             DialogResult dr = MessageBox.Show(text, "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dr==DialogResult.OK)
+            if (dr == DialogResult.OK)
             {
                 _bookService.Delete(Convert.ToInt32(txt_ID.Text));
             }
@@ -161,6 +170,26 @@ namespace MyPersonalLib.UI
             }
             List();
             Clear();
+        }
+
+        private void chk_IsRead_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_IsRead.Checked)
+            {
+                lbl_StartDate.Visible = true;
+                dateTimePicker1.Visible = true;
+
+                lbl_FinishDate.Visible = true;
+                dateTimePicker2.Visible = true;
+            }
+            else
+            {
+                lbl_StartDate.Visible = false;
+                dateTimePicker1.Visible = false;
+
+                lbl_FinishDate.Visible = false;
+                dateTimePicker2.Visible = false;
+            }
         }
     }
 }
