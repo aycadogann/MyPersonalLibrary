@@ -25,7 +25,8 @@ namespace MyPersonalLib.MvcUI.Controllers
             var books=_bookService.GetAll();
             IEnumerable<BookListViewModel> viewModelList = books.Select(b => new BookListViewModel
             {
-                BookName = b.BookName, // Kendi property isimlerine göre eşitle
+                ID=b.ID,
+                BookName = b.BookName,
                 Author = b.Author,
                 Status = b.Status==true? "Okundu" : "Okunacak",
                 Rate = b.Rate

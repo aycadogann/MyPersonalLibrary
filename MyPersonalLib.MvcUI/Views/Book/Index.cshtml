@@ -7,6 +7,7 @@
 
 <table class="table table-bordered table-hover table-striped">
     <tr>
+        <th> ID</th>
         <th> Kitap Adı</th>
         <th> Yazar</th>
         <th> Durum</th>
@@ -15,6 +16,7 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>@item.ID</td>
             <td>@item.BookName</td>
             <td>@item.Author</td>
             <td>@item.Status</td>
