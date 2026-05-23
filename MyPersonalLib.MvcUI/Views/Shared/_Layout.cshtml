@@ -18,10 +18,17 @@
                     <span class="icon-bar"></span>
                 </button>
                 @Html.ActionLink("My Personal Library", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Kitaplar", "Index", "Book", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Kitaplar", "Index", "Book", new { area = "" }, null)
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("Kitap Türleri", "Index", "Genre", new { area = "" }, null)
+                    </li>
                 </ul>
             </div>
         </div>
